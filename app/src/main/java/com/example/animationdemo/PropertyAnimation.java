@@ -1,5 +1,6 @@
 package com.example.animationdemo;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.Animator;
@@ -45,7 +46,6 @@ public class PropertyAnimation extends AppCompatActivity {
                 btObject.setRotationY(0);
             }
         });
-
         //Value animator
         Add_ValueAnimator((View)(btObject));
         //Object animator là 1 sub class của value animator
@@ -58,10 +58,6 @@ public class PropertyAnimation extends AppCompatActivity {
         Add_KeyFrames((View)(btObject));
         //Sử dụng interpolation
         Add_Interpolation((View)(btObject));
-        //Type Evaluate
-        TypeEvaluate((View)(btObject));
-        //StateList Animator
-        StateListAnimator((View)(btObject));
     }
     void Add_Interpolation(View Object) {
         btInterpolation=findViewById(R.id.btInterpolation);
@@ -180,7 +176,7 @@ public class PropertyAnimation extends AppCompatActivity {
 
     }
     void Add_ValueAnimator(View Object) {
-        btStart=findViewById(R.id.btStart);
+        btStart=findViewById(R.id.btValueAnimator);
         btStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -201,18 +197,15 @@ public class PropertyAnimation extends AppCompatActivity {
                         //btObject.setRotationX(animatedValue*360.f/100.f);
                         // Xoay 1 vòng theo chiều ngang
                         // btObject.setRotationY(animatedValue*360.f/100.f);
-
                         //Xoay tính theo độ
                         Object.setRotation(animatedValue*360.f/100.f);
-
                         //Phóng to (Tính theo %)
 //                        btObject.setScaleX(animatedValue*2f/100.f);
 //                        btObject.setScaleY(animatedValue*2f/100.f);
-
                         //Pivot (tính theo %) (Xoay object xung quanh trục)
 //                        btObject.setPivotX(animatedValue*1f/100);
 //                        btObject.setPivotY(animatedValue*1f/100);
-
+                        // Thay đổi trực tiếp toạ độ điểm
 //                        btObject.setX(animatedValue);
 //                        btObject.setY(animatedValue);
                     }
@@ -266,7 +259,7 @@ public class PropertyAnimation extends AppCompatActivity {
 
     }
     void SetObjectAnimator(View Object) {
-        btStart2=findViewById(R.id.btStartObject);
+        btStart2=findViewById(R.id.btObjectAnimator);
         btStart2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -347,41 +340,6 @@ public class PropertyAnimation extends AppCompatActivity {
                     }
                 });
                 valueAnimator.start();
-            }
-        });
-    }
-    void TypeEvaluate(View Object) {
-        btTypeEvaluate=findViewById(R.id.btTypeEvaluate);
-        btTypeEvaluate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ValueAnimator valueAnimator = new ValueAnimator();
-                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        int value = (int) animation.getAnimatedValue();
-                        Object.setTranslationX(value);
-                    }
-                });
-
-                valueAnimator.setEvaluator(new TypeEvaluator<Integer>() {
-                    public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
-                        return Math.round(startValue + (endValue - startValue) * fraction);
-                    }
-                });
-                valueAnimator.setDuration(1000);
-                valueAnimator.start();
-            }
-        });
-    }
-    void StateListAnimator(View Object)
-    {
-        btStateList=findViewById(R.id.btStateList);
-        btStateList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Object.setStateListAnimator(AnimatorInflater.loadStateListAnimator(getApplicationContext(),
-                        R.animator.smooth_shadow));
             }
         });
     }

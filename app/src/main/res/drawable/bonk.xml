@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-</selector>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/giphy0" android:duration="100" />
+    <item android:drawable="@drawable/giphy1" android:duration="100" />
+    <item android:drawable="@drawable/giphy2" android:duration="100" />
+    <item android:drawable="@drawable/giphy3" android:duration="100" />
+</animation-list>

@@ -6,21 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-    <Button
-        android:id="@+id/btViewAnimation"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="View Animation"
-        />
-    <Button
-        android:id="@+id/btPropertyAnimation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Property Animation"
-        android:layout_centerInParent="true"
-        android:layout_below="@id/btViewAnimation"
-        android:layout_marginTop="10dp" />
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+        <Button
+            android:id="@+id/btViewAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="View Animation"
+            />
+        <Button
+            android:id="@+id/btPropertyAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Property Animation"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+        <Button
+            android:id="@+id/btSceneAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Scene animation"
+            />
+        <Button
+            android:id="@+id/btBitmapAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Bitmaps animation"
+            />
 
-
+    </LinearLayout>
 </RelativeLayout>
