@@ -6,20 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="5"
         android:orientation="vertical">
-        <Button
-            android:id="@+id/btObject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:text="OBJECT"
-            android:layout_gravity="center"
-            />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/Object"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cheem"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="12dp"/>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +27,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal">
             <Button
@@ -119,6 +118,13 @@
                 android:layout_marginLeft="10dp"
                 android:text="Zoom out" />
         </LinearLayout>
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 
 

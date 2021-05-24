@@ -7,11 +7,51 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Scene 1"
-            android:onClick="onClick1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Planet of solar system"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+            <ImageButton
+                android:id="@+id/btEarth"
+                android:scaleType="centerInside"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/earth"
+                android:onClick="EarthOnClick"/>
+            <ImageButton
+                android:id="@+id/btMars"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/mars"
+                android:onClick="MarsOnClick"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+            <ImageButton
+                android:id="@+id/btJupiter"
+                android:src="@drawable/jupiter"
+                android:scaleType="centerInside"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:onClick="JupiterOnClick"/>
+            <ImageButton
+                android:id="@+id/btMercury"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/mercury"
+                android:onClick="MercuryOnClick"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>

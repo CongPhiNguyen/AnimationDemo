@@ -7,30 +7,30 @@
     tools:context=".PropertyAnimation"
     android:gravity="center_horizontal"
     android:orientation="vertical">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="5"
         android:orientation="vertical">
-        <Button
-            android:id="@+id/btObject1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center_horizontal"
-            android:text="Object" />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/Object1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cheem"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="12dp"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal">
             <Button
                 android:id="@+id/btValueAnimator"

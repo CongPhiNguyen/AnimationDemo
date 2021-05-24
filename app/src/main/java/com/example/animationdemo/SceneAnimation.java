@@ -11,11 +11,13 @@ import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class SceneAnimation extends AppCompatActivity {
 
-    Scene scene1, scene2, scene3;
-    Button btStart;
+    Scene scene1, scene_earth, scene_mars, scene_jupiter, scene_mercury;
+    ImageButton btEarth, btMars, btJupiter, btMercury;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,22 +25,31 @@ public class SceneAnimation extends AppCompatActivity {
 
         ViewGroup rootScene=findViewById(R.id.sceneRoot);
         scene1=Scene.getSceneForLayout(rootScene,R.layout.scene1, this);
-        scene2=Scene.getSceneForLayout(rootScene,R.layout.scene2, this);
-        scene3=Scene.getSceneForLayout(rootScene,R.layout.scene3, this);
+        scene_earth=Scene.getSceneForLayout(rootScene,R.layout.scene_earth, this);
+        scene_mars=Scene.getSceneForLayout(rootScene,R.layout.scene_mars, this);
+        scene_jupiter=Scene.getSceneForLayout(rootScene,R.layout.scene_jupiter, this);
+        scene_mercury=Scene.getSceneForLayout(rootScene,R.layout.scene_mercury, this);
         scene1.enter();
     }
-    public void onClick1(View view)
-    {
-        Transition Fade=new Fade();
-        TransitionManager.go(scene2, Fade);
+
+    public void Back(View view) {
+        Transition fade=new Fade();
+        TransitionManager.go(scene1, fade);
     }
-    public void onClick2(View view)
-    {
-        Transition Explode= new Explode();
-        TransitionManager.go(scene3, Explode);
+    public void EarthOnClick(View view) {
+        Transition explode=new Explode();
+        TransitionManager.go(scene_earth, explode);
     }
-    public void onClick3(View view)
-    {
-        TransitionManager.go(scene1);
+    public void MarsOnClick(View view) {
+        Transition explode=new Explode();
+        TransitionManager.go(scene_mars, explode);
+    }
+    public void MercuryOnClick(View view){
+        Transition explode=new Explode();
+        TransitionManager.go(scene_mercury, explode);
+    }
+    public void JupiterOnClick(View view){
+        Transition explode=new Explode();
+        TransitionManager.go(scene_jupiter, explode);
     }
 }

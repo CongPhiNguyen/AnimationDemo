@@ -14,50 +14,52 @@ import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.view.animation.BounceInterpolator;
 public class PropertyAnimation extends AppCompatActivity {
 
-    Button btObject, btStart, btStart2, btKeyFame, btMultiAnim, btInterpolation, btReset, btTypeEvaluate, btStateList;
+    ImageView Object;
+    Button btStart, btStart2, btKeyFame, btMultiAnim, btInterpolation, btReset, btTypeEvaluate, btStateList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property_animation);
 
-        btObject=findViewById(R.id.btObject1);
-        btObject.setOnClickListener(new View.OnClickListener() {
+        Object=findViewById(R.id.Object1);
+        Object.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Button object was clicked!!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Object was clicked!!",Toast.LENGTH_SHORT).show();
             }
         });
         btReset=findViewById(R.id.btReset);
         btReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.setScaleX(1);
-                btObject.setScaleY(1);
-                btObject.setRotation(0);
-                btObject.setAlpha(1f);
-                btObject.setTranslationX(0);
-                btObject.setTranslationY(0);
-                btObject.setTranslationZ(0);
-                btObject.setRotationX(0);
-                btObject.setRotationY(0);
+                Object.setScaleX(1);
+                Object.setScaleY(1);
+                Object.setRotation(0);
+                Object.setAlpha(1f);
+                Object.setTranslationX(0);
+                Object.setTranslationY(0);
+                Object.setTranslationZ(0);
+                Object.setRotationX(0);
+                Object.setRotationY(0);
             }
         });
         //Value animator
-        Add_ValueAnimator((View)(btObject));
+        Add_ValueAnimator((View)(Object));
         //Object animator là 1 sub class của value animator
-        SetObjectAnimator((View)(btObject));
+        SetObjectAnimator((View)(Object));
         //Kết hợp nhiều hiệu ứng
-        MultiAnimator((View)(btObject));
+        MultiAnimator((View)(Object));
         // Property Animation được khai báo bằng file xml
-        Add_XML_PropertyAnimation((View)(btObject));
+        Add_XML_PropertyAnimation((View)(Object));
         // Sử dụng key frame
-        Add_KeyFrames((View)(btObject));
+        Add_KeyFrames((View)(Object));
         //Sử dụng interpolation
-        Add_Interpolation((View)(btObject));
+        Add_Interpolation((View)(Object));
     }
     void Add_Interpolation(View Object) {
         btInterpolation=findViewById(R.id.btInterpolation);

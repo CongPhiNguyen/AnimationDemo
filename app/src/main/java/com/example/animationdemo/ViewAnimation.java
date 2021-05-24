@@ -7,21 +7,23 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ViewAnimation extends AppCompatActivity {
 
-    Button btObject;
+    ImageView Object;
     Animation animFadein, animBlink, animFadeOut, animMove,
             animRotate, animSlideUp, animSlideDown,
             animSequential, animTogether, animZoomIn, animZoomOut;
     Button fadeIn, fadeOut, blink, move, rotate, slideUp, slideDown, sequential, together, zoomIn, zoomOut;
+    Button btReset;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_animation);
 
-        btObject = findViewById(R.id.btObject);
+        Object = findViewById(R.id.Object);
 
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
@@ -36,10 +38,10 @@ public class ViewAnimation extends AppCompatActivity {
         animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_out);
 
 
-        btObject.setOnClickListener(new View.OnClickListener() {
+        Object.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Button Object was clicked !!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Object was clicked !!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -47,7 +49,7 @@ public class ViewAnimation extends AppCompatActivity {
         fadeIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animFadein);
+                Object.startAnimation(animFadein);
             }
         });
 
@@ -55,7 +57,7 @@ public class ViewAnimation extends AppCompatActivity {
         fadeOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animFadeOut);
+                Object.startAnimation(animFadeOut);
             }
         });
 
@@ -63,7 +65,7 @@ public class ViewAnimation extends AppCompatActivity {
         blink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animBlink);
+                Object.startAnimation(animBlink);
             }
         });
 
@@ -71,7 +73,7 @@ public class ViewAnimation extends AppCompatActivity {
         move.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animMove);
+                Object.startAnimation(animMove);
             }
         });
 
@@ -79,7 +81,7 @@ public class ViewAnimation extends AppCompatActivity {
         rotate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animRotate);
+                Object.startAnimation(animRotate);
             }
         });
 
@@ -87,7 +89,7 @@ public class ViewAnimation extends AppCompatActivity {
         slideUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animSlideUp);
+                Object.startAnimation(animSlideUp);
             }
         });
 
@@ -95,7 +97,7 @@ public class ViewAnimation extends AppCompatActivity {
         slideDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animSlideDown);
+                Object.startAnimation(animSlideDown);
             }
         });
 
@@ -103,7 +105,7 @@ public class ViewAnimation extends AppCompatActivity {
         sequential.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animSequential);
+                Object.startAnimation(animSequential);
             }
         });
 
@@ -111,7 +113,7 @@ public class ViewAnimation extends AppCompatActivity {
         together.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animTogether);
+                Object.startAnimation(animTogether);
             }
         });
 
@@ -119,7 +121,7 @@ public class ViewAnimation extends AppCompatActivity {
         zoomIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animZoomIn);
+                Object.startAnimation(animZoomIn);
             }
         });
 
@@ -127,8 +129,18 @@ public class ViewAnimation extends AppCompatActivity {
         zoomOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btObject.startAnimation(animZoomOut);
+                Object.startAnimation(animZoomOut);
             }
         });
+
+        Animation reset =AnimationUtils.loadAnimation(getApplicationContext(),R.anim.reset);
+        btReset = findViewById(R.id.btReset);
+        btReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Object.startAnimation(reset);
+            }
+        });
+
     }
 }
